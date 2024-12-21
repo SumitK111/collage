@@ -1,0 +1,4 @@
+{
+  "DB": "mongodb+srv://abc:vSAFOtSxKLIvCBm5@cluster0.tsdcpjt.mongodb.net/collage?retryWrites=true&w=majority&appName=Cluster0",
+  "PORT": 8000
+}

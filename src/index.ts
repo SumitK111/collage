@@ -2,6 +2,7 @@ import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
 import {} from './config/dbConfig.js'
 import * as dotenv from 'dotenv'
+import config from './config/envConfig.js'
 
 dotenv.config()
 // console.log(process.env.DB);
@@ -17,7 +18,7 @@ app.get('/', (c) => {
   return c.text('Hello Hono!')
 })
 
-const port:any= process.env.PORT 
+const port:number= config.PORT
 console.log(`Server is running on http://localhost:${port}`)
 
 serve({

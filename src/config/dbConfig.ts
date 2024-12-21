@@ -1,8 +1,8 @@
 import {connect} from 'mongoose'
 import * as dotenv from 'dotenv'
+import config from './envConfig.js'
 
-dotenv.config()
 
-const uri = process.env.DB as string
+const uri:string = config.DB as string
 connect(uri, {})
   .then(() => console.log('DB Connected!'));
