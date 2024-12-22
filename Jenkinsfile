@@ -4,15 +4,21 @@ pipeline {
         nodejs '22.2.0'
     }
     stages {
-        stage("print version"){
+        stage("checkout"){
             steps{
-               sh 'npm version'
+                checkout scm
             }
         }
 
-        stage("Test"){
+        stage("install"){
             steps{
            sh 'npm install'
+            }
+        }
+
+        stage("Deploy"){
+            steps{
+           sh 'npm run dev'
             }
         }
 
