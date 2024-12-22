@@ -8,8 +8,10 @@ pipeline {
         }
 
         stage("Test"){
+            step{
             sh 'apt install npm'
             sh 'npm run dev'
+            }
         }
 
         
