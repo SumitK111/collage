@@ -1,15 +1,18 @@
 pipeline {
     agent any
+    tools {
+        nodejs '22.2.0'
+    }
     stages {
-        stage("checkout"){
+        stage("print version"){
             steps{
-                checkout scm
+               sh 'npm version'
             }
         }
 
         stage("Test"){
             steps{
-           sh 'npm run dev'
+           sh 'npm install'
             }
         }
 
