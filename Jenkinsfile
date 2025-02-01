@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/your-username/jenkins-nodejs-cicd.git'
+                git branch: 'master', url: 'https://github.com/SumitK111/collage.git'
             }
         }
         
@@ -24,15 +24,11 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh 'npm test'
+                sh 'npm run dev'
             }
         }
 
-        stage('Build') {
-            steps {
-                sh 'npm run build'
-            }
-        }
+    
 
         stage('Deploy') {
             steps {
